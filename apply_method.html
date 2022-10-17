@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Method</title>
+    <style>
+        body, html{ font-family: Georgia, 'Times New Roman', Times, serif;}
+        p{ font-size: 16px; color: #000000; line-height: 25px;}
+    </style>
+</head>
+<body>
+
+
+
+
+    <p>
+        The apply method is used for object can access belonging to another object method.
+    it's similar to call method only difference between apply method takes arguments as an array.
+    </p>
+
+
+    <script>
+
+  var empDetails = {
+      empName: 'Sandeep Kumar',
+      companyName: 'SoftAge Software Solutions',
+      insdieFuction: function(salary){
+          console.log(`My name is ${this.empnameOther} and my company name is ${this.companyN} and monthly take home salary ${salary}`)
+
+      }
+  }
+
+
+
+  var empTwo = {
+      empnameOther: 'Prateek Mehta',
+      companyN: '10digi.com'
+      
+  }
+
+ empDetails.insdieFuction.apply(empTwo, [65000])
+
+
+
+
+let fun = function(){
+  
+  console.log("Hello 1");
+  data = 'Hello Sandeep Kumar Saxena'
+  
+}
+
+function fun2(){
+  console.log("Hello 2");
+}
+
+fun();
+fun2();
+
+
+
+
+    </script>
+    
+</body>
+</html>

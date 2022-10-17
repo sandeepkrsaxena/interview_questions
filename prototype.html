@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Method</title>
+    <style>
+        body, html{ font-family: Georgia, 'Times New Roman', Times, serif;}
+        p{ font-size: 16px; color: #000000; line-height: 25px;}
+    </style>
+</head>
+<body>
+
+
+    <p>The prototype is javascript object associated with every function and object by default in javascript
+        where function prototype property is accessible to modifiable and object's property.
+        prototype allows you to easily define methods to all instances of a particular object.
+    </p>
+
+
+    <script>   
+  var mobile = function(model_no){
+      this.model = model_no;
+      this.price = 12000;
+
+  };
+
+var nokia = new mobile('galaxy');
+var onePlus = new mobile('smart 5g');
+
+ mobile.prototype.color = "Dark Blue";
+ 
+console.log(onePlus)
+document.write(nokia.color, " : " ,nokia.model)
+
+let obj = {
+    name: "Sandeep Kumar",
+    city: "New Delhi",
+    getName: function(){
+        return this.name;
+    }
+}
+
+let obj2 = {
+    age: 30,
+    name: "Sandeep Kumar Saxena",
+    __proto__:obj
+}
+
+let obj3 = {
+    education: "BA",
+    __proto__: obj2
+}
+
+console.log(obj3)
+
+
+      </script>
+
+</body>
+</html>

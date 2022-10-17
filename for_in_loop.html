@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h4>for in loop used for to loop through a object's properties.</h4>
+    <script>
+        
+        function mobile(MobileName){
+
+            this.Name = MobileName;
+            this.Color = 'Black';
+            this.Ram = '4GB';
+            this.Price = 14000;
+
+            // this.my = function(){
+
+            // }
+
+
+        }
+
+        var nokia = new mobile('Samsung')
+
+
+
+for( let key in nokia){
+ 
+    if(typeof nokia[key] !== 'function'){
+
+    document.write(key + ": " + nokia[key] + "<br/> <br/>")
+  
+}
+}
+
+    </script>
+
+   
+
+
+    
+</body>
+</html>

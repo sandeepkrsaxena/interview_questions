@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Method</title>
+    <style>
+        body, html{ font-family: Georgia, 'Times New Roman', Times, serif;}
+        p{ font-size: 16px; color: #000000; line-height: 25px;}
+    </style>
+</head>
+<body>
+    
+<p>
+
+    The call() method is predefined javascript method
+    <br>
+    The call method is used for object can access belonging to another object method.
+</p>
+
+
+<script>
+ var companies = {
+     parentCompany: 'SoftAge',
+     childCompany: '10digi',
+      features: function(){
+       console.log(`My name is ${this.employeeName} and my location is ${this.location}`)
+       
+     } 
+     
+     }
+//  companies.features();
+
+ var kelltonTech = {
+    location: 'Mohan Garden Uttam Nagar',
+    employeeName: 'sandeep kumar',
+}
+
+
+companies.features.call(kelltonTech);
+
+
+
+</script>
+
+
+</body>
+</html>

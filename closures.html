@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Method</title>
+    <style>
+        body, html{ font-family: Georgia, 'Times New Roman', Times, serif;}
+        p{ font-size: 16px; color: #000000; line-height: 25px;}
+    </style>
+</head>
+<body>
+
+    <p>
+
+        Javascript closures allow to innner function can access outer function variables as wel as all the
+        global variables.
+    </p>
+
+<script>
+  
+ let myFucyion = (c) => {
+     let x = 100;
+     let inFuction = () => {
+         let c = 10000;
+         console.log(x+c)
+     }
+     inFuction()
+
+ }
+
+ myFucyion(100)
+
+</script>
+
+
+</body>
+</html>

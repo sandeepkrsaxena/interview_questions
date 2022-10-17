@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <title>Ajax Tutorial</title>
+    <style>
+         body, html{ font-family: 'Roboto', sans-serif;}
+        .li{
+            list-style: none;
+            margin-top: 8px;
+            display: block;
+            width: 100%;
+        }
+        .list{
+            border: solid 1px #eee;
+            border-radius: 2px;
+            padding: 10px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="demo"></div>
+ 
+    <div id="testing"></div>
+  
+    <script>
+    function loadDoc() {
+     let elementId = document.getElementById("demo");
+     let userData = "";
+     let className = "list li"
+     let liElement = document.createElement("li");
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onprogress = function() {
+    elementId.innerHTML = "loading..."
+   
+  }
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     let responseData = JSON.parse(this.responseText);
+     for(let key in responseData){
+      userData +=`<li class="${className}">${responseData[key].name}</li>`;
+      elementId.innerHTML = userData;
+     }
+
+    }
+  };
+  xhttp.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+  xhttp.send();
+}
+
+loadDoc()
+
+    </script>
+    
+</body>
+</html>

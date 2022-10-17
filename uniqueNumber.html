@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find unique number in array</title>
+</head>
+<body>
+    <script>
+        let number = [20, 20, 30, 49, 49, 30, 88, 29];
+        function getUniqueNum(){
+            for(let i = 0; i < number.length; i++){
+                for(var a = 0; a < i; a++){
+                    if(number[i] == number[a]){
+                        break;
+                    }
+                }
+                if(a == i){
+                        // console.log(number[i])
+                        
+                    }
+                
+            }
+        }
+        getUniqueNum()
+
+        let getNumber = number.filter((value, index, arr) => {
+            return arr.indexOf(value) === index;
+
+        })
+        console.log(getNumber)
+
+
+
+    </script>
+</body>
+</html>

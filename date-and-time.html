@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date and Time Function</title>
+    <style>
+        body{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif}
+        .grayBox{ width: 100px; height: 100px; float: left; line-height: 100px; padding: 0px; margin:0 5px 0 0; text-align: center; background: #EEE;}
+        </style>
+</head>
+<body>
+    
+
+
+<h1 class="grayBox" id="hour"></h1>
+<h1 class="grayBox" id="minutes"></h1>
+<h1 class="grayBox" id="seconds"></h1>
+
+<div id="realtime"></div>
+
+
+<script>
+var globeDateObject = new Date();
+var setTimeInterval = setInterval(dynamicTime, 1000)
+function dynamicTime(){
+var dateObject = new Date();
+var fullTime = dateObject.toLocaleTimeString();
+
+
+
+var dynamicHour = dateObject.getHours();
+var dynamicMinutes = dateObject.getMinutes();
+var dynamicSecond = dateObject.getSeconds();
+
+
+document.getElementById("hour").innerHTML = dynamicHour;
+document.getElementById("minutes").innerHTML = dynamicMinutes;
+document.getElementById("seconds").innerHTML = dynamicSecond;
+
+document.getElementById("realtime").innerHTML = fullTime;
+
+
+}
+
+var currentDate = globeDateObject.getDate();
+var currentMonth = globeDateObject.getMonth() + 1;
+var currentYear = globeDateObject.getFullYear();
+
+
+
+
+
+var completeDate = currentDate + "/" + currentMonth + "/" + currentYear;
+
+document.write(completeDate)
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Method</title>
+    <style>
+        body, html{ font-family: Georgia, 'Times New Roman', Times, serif;}
+        p{ font-size: 16px; color: #000000; line-height: 25px;}
+    </style>
+</head>
+<body>
+    
+<p>By use this method we can bind an object to a common function, so that need the function gives different result.
+     when use need.
+</p>
+
+<script>
+
+var empDetails = {
+    employeeName: 'Sandeep Kumar',
+    designation: 'UI UX Designer and UI Developer',
+    experience:'4'
+}
+
+
+ function myFunction(){
+     console.log(`Employee name is ${this.employeeName} he work as ${this.designation} and he work with last ${this.experience} year.`)
+ }
+
+ 
+var margeFunctrion = myFunction.bind(empDetails);
+margeFunctrion();
+
+</script>
+
+
+</body>
+</html>

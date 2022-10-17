@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 5 Local Storage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" >
+</head>
+<body>
+    
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 p-5 offset-md-3 border">
+            
+                <h3>HTML 5 Local Storage</h3>
+                <form action="" id="form">
+                <div class="form-group">
+                    <label for=""></label>
+                    <input type="text" id="inputValue" class="form-control">
+                </div>
+                <div class="form-group">
+                  <button type="submit" id="sumit_data" class="btn btn-info">Submit</button>    | <button type="submit" id="clear_data" class="btn btn-danger">Clear</button>
+                </div>
+            </form>
+
+                <div class="list-group">
+                    <!-- <li class="list-group-item"></li> -->
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+<script>
+
+$(document).on('click', '#sumit_data', function(){
+    var inputDataValue = $('#inputValue').val();
+
+    if(inputDataValue != ''){
+        
+        $('.list-group').prepend('<li class="list-group-item">' +inputDataValue+ '</li>');
+        var toodoList = $('.list-group').html();
+        localStorage.setItem('localList', toodoList);
+        sessionStorage.setItem('localList', toodoList);
+        $('#form').reset();
+    }
+
+    else{
+        alert('Form fill is emity')
+    }
+return false;
+
+
+
+});
+
+if(localStorage.getItem('localList')){
+    var listItems = localStorage.getItem('localList');
+    $('.list-group').html(listItems);
+
+}
+
+
+$(document).on('click', '#clear_data', function(){
+    localStorage.removeItem('localList');
+    
+});
+
+
+
+</script>
+
+</body>
+</html>

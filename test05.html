@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+     let userDetails = function(name, age){
+       this.userName = name,
+       this.userAge = age
+
+     }
+
+     let userOne = new userDetails("Sandeep", 30)
+     console.log(userOne)
+
+     let userTwo = new userDetails("Shalu", 24)
+     console.log(userTwo)
+
+     userDetails.prototype.getName = function(){
+         console.log(this.userName)
+     }
+
+     userTwo.getName();
+
+  
+
+    </script>
+    
+</body>
+</html>

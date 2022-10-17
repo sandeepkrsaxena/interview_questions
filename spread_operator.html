@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Method</title>
+    <style>
+        body, html{ font-family: Georgia, 'Times New Roman', Times, serif;}
+        p{ font-size: 16px; color: #000000; line-height: 25px;}
+    </style>
+</head>
+<body>
+
+<p>
+ 
+    Spread operator allows an iterable to expand in places where +0 argument are expected.
+    It's mostly used in array where there is more then 1 values are expected.
+    it allows us the privilege to obtain a list of parameter from array.
+</p>
+
+    <script>
+    let spredFucntion = (a, b, c) => {
+        console.log(a+b+c);
+    }
+
+    
+    let arr = [1, 2, 4];
+
+    spredFucntion(...arr);
+
+    
+    let myArr = ["Sandeep","Praveen","Prateek"];
+
+    let margeArr = [...myArr, "Pavan", "Varsha"];
+
+    console.log(margeArr);
+
+
+
+
+
+
+
+      </script>
+
+</body>
+</html>

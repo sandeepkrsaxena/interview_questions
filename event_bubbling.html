@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Method</title>
+    <style>
+        body, html{ font-family: Georgia, 'Times New Roman', Times, serif;}
+        p{ font-size: 16px; color: #000000; line-height: 25px;}
+    </style>
+</head>
+<body>
+
+    <p>
+     Javascript event bubbling is term, it's related to the order which event handler are called
+     That's mean both elements are registered as a event listner for same event.
+    </p>
+
+<div>
+    sdfsf
+    <button type="submit">Click</button>
+</div>
+
+    <script>
+      var button = document.querySelector("button");
+        var div = document.querySelector("div");
+        div.addEventListener( "click", () => {
+            alert("Hi Sandeep Kumar");
+        })
+        
+        button.addEventListener( "click", event => {
+        event.stopPropagation();
+
+})
+
+
+
+
+
+
+
+      </script>
+
+</body>
+</html>

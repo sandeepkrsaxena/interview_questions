@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Order Function</title>
+</head>
+<body>
+<script>
+
+
+ let numbers = [10, 20, 20, 89, 13, 16, 25];
+ let numbeSum = numbers.map((itemValue, itemIndex) => {
+      return itemValue + 2;
+
+  });
+  console.log("number sum", numbeSum);
+
+  let numbeSumFil = numbers.filter((itemValue, itemIndex) => {
+      return itemValue + 2;
+
+  });
+  console.log("number sum filter", numbeSumFil);
+
+
+  let companies = [
+    {name: "Amazon", headquarter: "America", category: "Ecommerce", start: 1990},
+    {name: "Flipkart", headquarter: "India", category: "Delivery", start: 2008},
+    {name: "Myntra", headquarter: "India", category: "ecommerce", start: 2010}
+    ];
+
+
+ let companiesData = companies.forEach((itemValue, itemIndex) => {
+     if(itemValue.category.toUpperCase() === "ECOMMERCE"){
+         return itemValue;
+     }
+
+ })
+ console.log("forEach", companiesData)
+
+ let companiesDataMap = companies.map((value, index) => {
+     if(value.category.toUpperCase() == "ECOMMERCE"){
+         return value.name;
+     }
+
+ })
+ console.log("Companies data with map", companiesDataMap)
+
+ let companiesDataFilter = companies.filter((data, id) => {
+     if(data.category.toUpperCase() == "ECOMMERCE"){
+         document.write(data.name)
+         return data.name;
+     }
+
+ })
+
+ console.log("Companies data with filer 0000", companiesDataFilter)
+
+ for(let compData of companies){
+     if(compData.category.toUpperCase() === "ECOMMERCE"){
+        console.log(compData)
+     }
+     
+ }
+ 
+ 
+
+ 
+
+
+
+//  document.write(companiesDataFilter)
+
+
+</script>
+</body>
+</html>

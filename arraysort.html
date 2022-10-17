@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sort</title>
+</head>
+<body>
+    
+
+    <script>
+        let names = ["Sandeep", "Rahul", "Deepak", "Shaurya", "Shalini"];
+        let sortNames = names.sort();
+        console.log(sortNames)
+
+        let numbers = [34, 607, 676, 67, 39, 20, 1];
+        let sortNumbers = numbers.sort();
+        console.log(sortNumbers);
+
+        let descendingOrder = numbers.sort(descendingNum);
+        console.log(descendingOrder);
+        function descendingNum(a, b){
+            return b - a;
+        }
+
+
+        let arrOfObj = [
+            {name: "Sandeep", city: "New Delhi", age: 30},
+            {name: "Mithilesh", city: "Bihar", age: 40},
+            {name: "Shivam", city: "Lucknow", age: 29},
+            {name: "Ashish", city: "Uttarakhand", age: 30},
+        ];
+
+        let sortArrOfObj = arrOfObj.sort(sortArrData);
+        function sortArrData(a, b){
+            return a.age - b.age;
+            
+        }
+
+        console.log(sortArrOfObj)
+
+
+    </script>
+
+</body>
+</html>

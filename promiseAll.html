@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise.all</title>
+</head>
+<body>
+<div id="imageId"></di>
+<script>
+const postAPI = fetch('https://jsonplaceholder.typicode.com/posts/1');
+const photoAPI = fetch('https://jsonplaceholder.typicode.com/photos/1');
+const todosAPI = fetch('https://jsonplaceholder.typicode.com/todos/1');
+const image = document.createElement("img");
+image.classList.add("image-img");
+const imageElement = document.getElementById("imageId");
+function multiAPIResponse(){
+  return Promise.all([postAPI, photoAPI, todosAPI]).then(
+    values => {
+      return Promise.all(values.map(res => res.json()))
+    }
+  ).then(
+    ([resPostAPI, resPhotoAPI, resTodoAPI]) => {
+      image.setAttribute("src", resPhotoAPI.url)
+      image.setAttribute("alt","dynamic image")
+      imageElement.appendChild(image)
+      console.log(resPostAPI)
+      console.log(resPhotoAPI)
+      console.log(resTodoAPI)
+    }
+  )
+}
+multiAPIResponse()
+</script>
+</body>
+</html>

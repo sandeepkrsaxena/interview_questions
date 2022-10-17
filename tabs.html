@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        p{ display: none; position: absolute; left: 0;}
+        nav ul{ list-style: none;}
+        nav ul li{ float: left;}
+        nav ul li a{ display: inline-block; margin: 0 10px;}
+        .displayblock{ display: block !important;}
+        
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+        <divc class="col-md-6 offset-md-3">
+            <nav id="accordion">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)" data-toggle="tab-1" class="displayblock">Accordion 1</a>
+                        <p class="pt-2 displayblock" id="tab-1">1. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)"  data-toggle="tab-2">Accordion 2</a>
+                        <p class="pt-2" id="tab-2">2. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                    </li>
+                   
+
+                    <li>
+                        <a href="javascript:void(0)"  data-toggle="tab-3">Accordion 3</a>
+                        <p class="pt-2" id="tab-3">3. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                    </li>
+                   
+                   
+
+
+
+                </ul>
+            </nav>
+        </divc>
+    </div>
+</div>
+ 
+    
+
+    
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+
+
+$(document).on('click', '#accordion>ul>li>a' , function(){
+    var tabId= $(this).attr('data-toggle');
+
+    $('#accordion>ul>li>a').removeClass('displayblock');
+    $('p').removeClass('displayblock');
+
+    $(this).addClass('displayblock');
+    $('#'+tabId).addClass('displayblock');
+
+    let abd = $('#'+tabId);
+console.log(abd)
+
+
+})
+
+
+
+
+
+
+</script>
+
+
+    
+</body>
+</html>
